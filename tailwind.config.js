@@ -8,18 +8,18 @@ module.exports = {
   },
   plugins: [
 
-    plugin(function({ addComponents }) {
-      const buttons = {
-        '.btn': {
-          padding: '.5rem 1rem !important',
-          borderRadius: '.25rem !important',
-          fontWeight: '600 !important',
-          background: 'red'
-        },
-      }
+    // plugin(function({ addComponents }) {
+    //   const buttons = {
+    //     '.btn': {
+    //       padding: '.5rem 1rem !important',
+    //       borderRadius: '.25rem !important',
+    //       fontWeight: '600 !important',
+    //       background: 'red'
+    //     },
+    //   }
 
-      addComponents(buttons)
-    })
+    //   addComponents(buttons)
+    // })
 
   ]
 

@@ -35,8 +35,8 @@
     }
 
     /* Basic Elements */
-    .row { @apply container flex flex-row flex-wrap mx-auto gap-4 lg:flex-nowrap; }
-    .row.reverse { @apply lg:flex-row-reverse; }
+    .d-flex { @apply container flex flex-row flex-wrap mx-auto gap-4 lg:flex-nowrap; }
+    .d-flex.reverse { @apply lg:flex-row-reverse; }
 
 
     .col { @apply px-6 basis-full; }
@@ -47,7 +47,7 @@
     .col.img-container img { @apply w-full aspect-square object-cover rounded-md md:aspect-video; }
 
     .col.text-container { @apply lg:pr-0 lg:pl-16; }
-    .row.reverse .col.text-container { @apply lg:pr-16 lg:pl-0; }
+    .d-flex.reverse .col.text-container { @apply lg:pr-16 lg:pl-0; }
 
     /* Icons */
     .icon-box { @apply mx-auto aspect-square w-20 flex items-center justify-center rounded-md bg-blue-100 p-2 mb-2; }
