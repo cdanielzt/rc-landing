@@ -67,17 +67,21 @@
 
 
     /* Single Template */
-    .template-grid { @apply container mx-auto py-6 grid grid-cols-1 gap-5 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:py-10; }
-    .template-grid-item { @apply overflow-hidden bg-white rounded-lg shadow-lg; }
+    .template-grid { @apply container mx-auto px-6 py-6 lg:py-10 flex flex-row flex-wrap gap-5  justify-center; }
+    .template-grid-item { @apply overflow-hidden bg-white rounded-lg shadow-lg 
+        w-[280px] md:w-[350px] lg:w-[500px];
+    }
 
-    .template-grid-item > img, .template-grid-item-img { @apply object-cover w-full h-52 overflow-hidden relative; }
-    .template-grid-item-img .template-img-thumb { @apply absolute top-0 left-0 h-full w-full object-cover opacity-100 z-0 transition-transform duration-700 ease-linear translate-y-0; }
+    .template-grid-item-img { @apply overflow-hidden relative after:block 
+        after:pb-[210px] md:after:pb-[262px] lg:after:pb-[375px];
+    }
+    .template-grid-item-img > img { @apply absolute top-0 left-0 w-full object-cover transition-all ease-linear; }
+    .template-grid-item-img .template-img-thumb { @apply h-full z-0 duration-700 translate-y-0; }
+    .template-grid-item-img .template-img-full { @apply duration-[2000ms]; }
+
     .template-grid-item-img:hover .template-img-thumb { @apply -translate-y-full; }
-
-    .template-grid-item-img .template-img-full { @apply w-full overflow-hidden object-cover transition-all duration-[2000ms] ease-linear; }
-    .template-grid-item-img:hover .template-img-full {
-        @apply transition-transform delay-500 duration-[7000ms] ease-in-out;
-        transform: translateY(calc(-100% + 13rem)); 
+    .template-grid-item-img:hover .template-img-full { @apply delay-700 duration-[7000ms] ease-in-out 
+        translate-y-[calc(-100%_+_210px)] md:translate-y-[calc(-100%_+_262px)] lg:translate-y-[calc(-100%_+_375px)];
     }
 
     .template-grid-item-text { @apply py-5 px-6 text-center border-t border-gray-200 flex flex-nowrap items-center gap-6 justify-between; }
