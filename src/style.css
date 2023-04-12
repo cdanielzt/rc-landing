@@ -17,6 +17,10 @@
 
     .text-big { @apply py-4 m-0 text-gray-500 text-base lg:text-lg; }
 
+    .title-border { @apply text-center
+        after:block after:mx-auto after:mb-8 after:w-20 after:border after:border-b-4;
+    }
+
     /* List Style */
     .check-list { @apply p-0 m-0 text-gray-500; }
     .check-list li { @apply box-border relative py-1 pl-0 text-left; }
@@ -37,7 +41,6 @@
     /* Basic Elements */
     .d-flex { @apply container flex flex-row flex-wrap mx-auto gap-4 lg:flex-nowrap; }
     .d-flex.reverse { @apply lg:flex-row-reverse; }
-
 
     .col { @apply px-6 basis-full; }
     .col.col-centered-title { @apply text-center lg:pb-0 md:max-w-4xl md:mx-auto;}
@@ -108,6 +111,42 @@
     .accordion-item .accordion-body a { @apply text-indigo-500 underline; }
     .accordion-item .accordion-body ol { @apply list-decimal list-inside; }
     .accordion-item .accordion-body li { @apply text-inherit mb-4; }
+
+
+    /* Addons */
+    .addon-grid { @apply flex flex-wrap justify-center gap-5; }
+    .addon-item { @apply 
+        w-36 aspect-square overflow-hidden bg-white border border-gray-200 rounded-lg shadow-lg flex flex-col justify-center items-center gap-3 p-2
+        transition-all duration-300 ease-linear hover:scale-105 hover:shadow-2xl;
+    }
+
+    .addon-item svg { @apply w-10 h-10 mx-auto; }
+    .addon-item svg path { @apply stroke-1; }
+
+    #listing-tools .title-border { @apply after:border-red-500; }
+    #listing-tools svg path { @apply stroke-red-500; }
+    
+    #map-tools .title-border { @apply after:border-pink-500; }
+    #map-tools svg path { @apply stroke-pink-500; }
+
+    #lead-generation-tools .title-border { @apply after:border-purple-500; }
+    #lead-generation-tools svg path { @apply stroke-purple-500; }
+
+    #lead-management-tools .title-border { @apply after:border-blue-500; }
+    #lead-management-tools svg path { @apply stroke-blue-500; }
+
+    #agent-tools .title-border { @apply after:border-cyan-500; }
+    #agent-tools svg path { @apply stroke-cyan-500; }
+
+    #community-tools .title-border { @apply after:border-emerald-500; }
+    #community-tools svg path { @apply stroke-emerald-500; }
+
+    #seo-tools .title-border { @apply after:border-amber-500; }
+    #seo-tools svg path { @apply stroke-amber-500; }
+
+    .addon-item-title { @apply px-2 text-center flex flex-nowrap items-center gap-2 justify-between; }
+    .addon-item-title h6 { @apply block text-sm font-bold text-gray-800; }
+
 }
 
 
