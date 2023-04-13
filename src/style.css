@@ -144,6 +144,9 @@
     #seo-tools .title-border { @apply after:border-amber-500; }
     #seo-tools svg path { @apply stroke-amber-500; }
 
+    #wordpress-plugins .title-border { @apply after:border-red-500; }
+    #wordpress-plugins svg path { @apply stroke-red-500; }
+
     .addon-item-title { @apply px-2 text-center flex flex-nowrap items-center gap-2 justify-between; }
     .addon-item-title h6 { @apply block text-sm font-bold text-gray-800; }
 
