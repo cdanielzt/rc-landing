@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://stijndv.com">
     <link rel="stylesheet" href="https://stijndv.com/fonts/Eudoxus-Sans.css">
     <link rel="stylesheet" href="../../dist/tailwind.css">
+
 </head>
 <body>
 
@@ -115,13 +116,15 @@
                 <iframe src="https://www.youtube.com/embed/pIWUECMOBAs" title="Plunk Home Valuation Widget to calculate your homes&#39; worth with IDX Broker" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="mt-8 lg:mt-16 w-full max-w-3xl mx-auto aspect-video" allowfullscreen></iframe>
 
                 <!-- Description -->
-                <div class="description">
+                <div class="description lightbox">
 
                     <!-- How it works -->
                     <div class="d-flex reverse lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container no-cut">
-                            <img src="../img/plunk-about.png">
+                            <a class="popup-image" href="../img/plunk-about.png">
+                                <img src="../img/plunk-about.png" alt="Plunk About">
+                            </a>
                         </div>
             
                         <!-- Content -->
@@ -137,7 +140,9 @@
                     <div class="d-flex lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container no-cut">
-                            <img src="../img/plunk-search.png">
+                            <a class="popup-image" href="../img/plunk-search.png">
+                                <img src="../img/plunk-search.png" alt="Plunk Search">
+                            </a>
                         </div>
             
                         <!-- Content -->
@@ -153,7 +158,9 @@
                     <div class="d-flex reverse lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container">
-                            <img src="../img/plunk-match.png">
+                            <a href="../img/plunk-match.png" class="popup-image">
+                                <img src="../img/plunk-match.png" alt="Plunk Match">
+                            </a>
                         </div>
             
                         <!-- Content -->
@@ -169,7 +176,9 @@
                     <div class="d-flex lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container no-cut">
-                            <img src="../img/plunk-none.png">
+                            <a href="../img/plunk-none.png" class="popup-image">
+                                <img src="../img/plunk-none.png" alt="Plunk None">
+                            </a>
                         </div>
             
                         <!-- Content -->
@@ -185,7 +194,9 @@
                     <div class="d-flex reverse lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container animated">
-                            <img src="https://res.cloudinary.com/dscqcqtjn/image/upload/v1670862635/Plunk%20Valuation/382f6a96-1d37-4d50-bd8c-69ee16e0a351_k4fec4.png">
+                            <a href="https://res.cloudinary.com/dscqcqtjn/image/upload/v1670862635/Plunk%20Valuation/382f6a96-1d37-4d50-bd8c-69ee16e0a351_k4fec4.png" class="popup-image">
+                                <img src="https://res.cloudinary.com/dscqcqtjn/image/upload/v1670862635/Plunk%20Valuation/382f6a96-1d37-4d50-bd8c-69ee16e0a351_k4fec4.png" alt="Plunk Insights">
+                            </a>
                         </div>
 
                         <!-- Content -->
@@ -201,7 +212,9 @@
                     <div class="d-flex lg:items-center pt-8 lg:pt-16">
                         <!-- Image -->
                         <div class="col lg:basis-1/2 img-container">
-                            <img src="../img/plunk-requests.png">
+                            <a href="../img/plunk-requests.png" class="popup-image">
+                                <img src="../img/plunk-requests.png" alt="Plunk Requests">
+                            </a>
                         </div>
             
                         <!-- Content -->
@@ -360,6 +373,32 @@
             <p class="mt-6 text-sm <?= $navTheme == 'transparent' ? 'text-white' : 'text-gray-500' ?> lg:mt-0 ">© Copyright 2023 IDXAddons </p>
         </div>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- magnificPopup -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
+    <!-- Add lightbox to all .popup-image links -->
+    <script>
+        $(document).ready(function(){
+            $('.popup-image').magnificPopup({
+                type:'image',
+                gallery:{
+                    enabled:true
+                },
+                closeBtnInside: false,
+                removalDelay: 300,
+                mainClass: 'mfp-fade mfp-light'                
+            });
+        });
+    </script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine-ie11.js" integrity="sha512-6m6AtgVSg7JzStQBuIpqoVuGPVSAK5Sp/ti6ySu6AjRDa1pX8mIl1TwP9QmKXU+4Mhq/73SzOk6mbNvyj9MPzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- FreeScout BEGIN -->
     <script>var FreeScoutW={s:{"color":"#c41d09","position":"br","id":3215672200}};(function(d,e,s){if(d.getElementById("freescout-w"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="freescout-w";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","https://help.idxplatinumtools.com/modules/rcchatmodule/js/widget.js?v=3468");</script>
