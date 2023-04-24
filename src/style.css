@@ -12,14 +12,18 @@
     .h2 { @apply text-2xl md:text-3xl lg:text-4xl; }
     .h3 { @apply text-xl  md:text-2xl lg:text-3xl; }
     .h4 { @apply text-lg  md:text-xl lg:text-2xl; }
+    .h6 { @apply text-sm font-semibold tracking-widest uppercase; }
 
     .title-slogan { @apply text-sm uppercase text-indigo-500 font-semibold tracking-widest; }
 
-    .text-big { @apply py-4 m-0 text-gray-500 text-base lg:text-lg; }
+    p.text-big, .text-big p { @apply py-4 m-0 text-gray-500 text-base lg:text-lg; }
+    p.text-big + p.text-big,
+    .text-big p + p { @apply pt-0; }
 
     .title-border { @apply text-center
-        after:block after:mx-auto after:mb-8 after:w-20 after:border after:border-b-4;
+        after:block after:mx-auto after:mb-8 after:w-20 after:border after:border-b-4 after:border-indigo-500;
     }
+    .title-border svg path { @apply stroke-indigo-500; }
 
     /* List Style */
     .check-list { @apply p-0 m-0 text-gray-500; }
@@ -31,6 +35,7 @@
 
     /* Button and Links Elements */
     .btn-main { @apply w-auto inline-block py-3 px-6 text-center bg-[#FFA41C] transition-colors duration-300 ease-linear hover:bg-[#FF9500] text-[15px] font-semibold rounded-md shadow-sm; }
+    .btn-secondary { @apply w-auto inline-block py-3 px-6 text-center border border-[#FF9500] bg-white transition-colors duration-300 ease-linear hover:bg-[#FFA41C] text-[15px] font-semibold rounded-md shadow-sm; }
 
     .link-arrow { 
         @apply block pt-4 text-sm font-semibold text-black ease-linear transition-all
@@ -48,6 +53,17 @@
     
     .col.img-container, .col.text-container { @apply md:px-16 lg:px-0; }
     .col.img-container img { @apply w-full aspect-square object-cover rounded-md md:aspect-video; }
+    .col.img-container.no-cut img { @apply aspect-auto; }
+    
+    .col.img-container.animated { @apply overflow-hidden relative after:block after:pb-[66%]; }
+    .col.img-container.animated img { @apply absolute top-0 left-1/2 transition-all ease-linear aspect-auto duration-[2000ms];
+        animation: animateMockupScroll 12s ease-in-out infinite;
+    }
+    @keyframes animateMockupScroll {
+        0%   { top: 0%;  transform: translate3d(-50%, 0%, 0); }
+        90%  { top:100%; transform: translate3d(-50%, -100%, 0); }
+        100% { top:0%;   transform: translate3d(-50%, 0%, 0); }
+    }
 
     .col.text-container { @apply lg:pr-0 lg:pl-16; }
     .d-flex.reverse .col.text-container { @apply lg:pr-16 lg:pl-0; }
@@ -149,6 +165,17 @@
 
     .addon-item-title { @apply px-2 text-center flex flex-nowrap items-center gap-2 justify-between; }
     .addon-item-title h6 { @apply block text-sm font-bold text-gray-800; }
+
+    /* About */
+    #about .description > div:nth-of-type(9n) .title-slogan { @apply text-indigo-500; }
+    #about .description > div:nth-of-type(9n+2) .title-slogan { @apply text-red-500; }
+    #about .description > div:nth-of-type(9n+3) .title-slogan { @apply text-pink-500; }
+    #about .description > div:nth-of-type(9n+4) .title-slogan { @apply text-purple-500; }
+    #about .description > div:nth-of-type(9n+5) .title-slogan { @apply text-blue-500; }
+    #about .description > div:nth-of-type(9n+6) .title-slogan { @apply text-cyan-500; }
+    #about .description > div:nth-of-type(9n+7) .title-slogan { @apply text-emerald-500; }
+    #about .description > div:nth-of-type(9n+8) .title-slogan { @apply text-amber-500; }
+    #about .description > div:nth-of-type(9n+9) .title-slogan { @apply text-green-500; }
 
 }
 
